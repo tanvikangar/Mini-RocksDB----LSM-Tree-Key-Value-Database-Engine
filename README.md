@@ -2,4 +2,5 @@
 ## Team Members
 - Tanvi Kangar
 - Kripa Bargali
+- Yashika Rajwar
 - khushi Malik
