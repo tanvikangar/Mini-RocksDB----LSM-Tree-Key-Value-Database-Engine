@@ -3,4 +3,4 @@
 - Tanvi Kangar
 - Kripa Bargali
 - Yashika Rajwar
-- khushi Malik
+- Khushi Malik
