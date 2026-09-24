@@ -2,3 +2,4 @@
 ## Team Members
 - Tanvi Kangar
 - Kripa Bargali
+- khushi Malik
