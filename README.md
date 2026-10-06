@@ -4,8 +4,8 @@ A small key-value database engine written in C++, inspired by RocksDB. It stores
 
 Project-Based Learning (PBL) project, Department of Computer Science & Engineering, Graphic Era (Deemed to be University), Dehradun. Session 2026-27.
 
-**Team ID:** DSCPP-III-2026-T146
-**Mentor:** Dr. Siddhant Thapliyal
+- **Team ID:** DSCPP-III-2026-T146
+- **Mentor:** Dr. Siddhant Thapliyal
 
 ## Team Members
 - Tanvi Kangar
