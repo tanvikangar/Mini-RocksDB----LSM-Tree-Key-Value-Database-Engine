@@ -7,10 +7,6 @@
 
 A small key-value database engine written in C++, inspired by RocksDB. It stores data using the idea of a Log-Structured Merge-Tree (LSM-Tree): fast writes in memory, sorted files on disk, and a quick check before reading from disk.
 
-Project-Based Learning (PBL) project, Department of Computer Science & Engineering, Graphic Era (Deemed to be University), Dehradun. Session 2026-27.
-
-**Team ID:** DSCPP-III-2026-T146
-**Mentor:** Dr. Siddhant Thapliyal
 
 ## Problem
 
@@ -73,3 +69,9 @@ Write-Ahead Logging (WAL) for crash recovery, automatic compaction of old files,
 - Bonomi et al. (2006), An Improved Construction for Counting Bloom Filters
 - M. Kleppmann, Designing Data-Intensive Applications
 - RocksDB documentation and cppreference.com
+
+
+Project-Based Learning (PBL) project, Department of Computer Science & Engineering, Graphic Era (Deemed to be University), Dehradun. Session 2026-27.
+
+**Team ID:** DSCPP-III-2026-T146
+**Mentor:** Dr. Siddhant Thapliyal
