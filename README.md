@@ -3,7 +3,7 @@
 - Tanvi Kangar
 - Kripa Bargali
 - Yashika Rajwar
-- Khushi Malik
+- Kushi Malik
 
 A small key-value database engine written in C++, inspired by RocksDB. It stores data using the idea of a Log-Structured Merge-Tree (LSM-Tree): fast writes in memory, sorted files on disk, and a quick check before reading from disk.
 
