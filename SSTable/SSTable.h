@@ -1,21 +1,15 @@
 #ifndef SSTABLE_H
 #define SSTABLE_H
-
 #include <string>
 #include <vector>
-#include <utility>
-
-using namespace std;
+#include "common.h"
 
 class SSTable
 {
-private:
-    vector<pair<string, string>> data;
-
-public:
-    void add(const string& key, const string& value);
-    string get(const string& key);
-    void display();
+    public:
+        static void write(const std::string& path, const std::vector<Entry>& sorted);
+        static std::vector<Entry> readdAll(const std::string& path);
+        static bool get(const std::string& path, const std::string& key, Entry& result);
 };
 
 #endif
