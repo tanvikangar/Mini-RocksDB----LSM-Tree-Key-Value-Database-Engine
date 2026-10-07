@@ -21,8 +21,10 @@ class DatabaseEngine
         bool get(const std::string& key, std::string& value) 
         {
             Entry e;
-            if (!memtable.get(key, e)) return false;
-            if (e.deleted) return false;
+            if (!memtable.get(key, e)) 
+                return false;
+            if (e.deleted) 
+                return false;
             value = e.value;
             return true;
         }
