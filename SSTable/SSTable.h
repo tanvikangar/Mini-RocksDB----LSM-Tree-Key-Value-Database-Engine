@@ -3,19 +3,20 @@
 
 #include <string>
 #include <vector>
-#include <utility>
-
-using namespace std;
+struct Entry
+{
+    std::string key;
+    std::string value;
+    bool deleted = false;
+};
 
 class SSTable
 {
-private:
-    vector<pair<string, string>> data;
+    public:
+        void write(const std::string& path, const std::vector<Entry>& sorted);
+        std::vector<Entry> readAll(const std::string& path);
+        bool get(const std::string& path, const std::string& key, Entry& result);
 
-public:
-    void add(const string& key, const string& value);
-    string get(const string& key);
-    void display();
 };
 
 #endif
