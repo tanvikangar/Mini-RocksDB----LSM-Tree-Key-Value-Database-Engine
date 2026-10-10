@@ -3,18 +3,22 @@
 int main() 
 {
     DatabaseEngine db;
-    db.put("banana", "yellow");
-    db.put("apple", "red");
+    db.put("grapes", "green");
     db.put("cherry", "dark red");
-    db.remove("banana");
+    db.put("watermelon", "dark green");
+    db.remove("grapes");
+
     std::string v;
-    if (db.get("apple", v)) 
-        std::cout << "apple -> " << v << "\n";
-    if (!db.get("banana", v)) 
-        std::cout << "banana -> not found (deleted)\n";
+    if (db.get("cherry", v)) 
+        std::cout << "cherry -> " << v << "\n";
+    if (!db.get("grapes", v)) 
+        std::cout << "grapes -> not found (deleted)\n";
+
     db.flushToDisk("phase2.sst");
     std::cout << "\nContents of phase2.sst:\n";
-    std::vector<Entry> all = SSTable::readAll("phase2.sst");
+
+    SSTable sstable;
+    std::vector<Entry> all = sstable.readAll("phase2.sst");
     for (size_t i = 0; i < all.size(); i++) 
     {
         std::cout << all[i].key << " = " << all[i].value;

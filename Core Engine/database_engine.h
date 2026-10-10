@@ -31,7 +31,8 @@ class DatabaseEngine
 
         void flushToDisk(const std::string& path) 
         {  
-            SSTable::write(path, memtable.getAll());
+            SSTable sstable;
+            sstable.write(path, memtable.getAll());
             memtable.clear();
         }
 
