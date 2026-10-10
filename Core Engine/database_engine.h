@@ -3,7 +3,7 @@
 #include <string>
 #include "common.h"
 #include "memtable.h"
-#include "sstable.h"
+#include "SSTable.h"
 
 class DatabaseEngine
 {
