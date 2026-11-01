@@ -2,6 +2,7 @@
 void Database::loadExistingFiles() 
 {
     int id = 1;
+
     while (true) 
     {
         std::string path = FlushManager::pathFor(name, id);
