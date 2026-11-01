@@ -1,43 +1,38 @@
 #ifndef DATABASE_ENGINE_H
 #define DATABASE_ENGINE_H
 #include <string>
+#include <vector>
 #include "common.h"
 #include "memtable.h"
-#include "SSTable.h"
+#include "sstable.h"
+#include "bloom_filter.h"
+#include "flush_manager.h"
 
-class DatabaseEngine
+class DatabaseEngine 
 {
-    public:
-        void put(const std::string& key, const std::string& value) 
-        {
-            memtable.put(key, value);
-        }
+public:
+    DatabaseEngine(const std::string& name = "mydb", int memtableLimit = 1000);
+    ~DatabaseEngine();
 
-        void remove(const std::string& key) 
-        {
-            memtable.remove(key);
-        }
+    void put(const std::string& key, const std::string& value);
+    void remove(const std::string& key);
 
-        bool get(const std::string& key, std::string& value) 
-        {
-            Entry e;
-            if (!memtable.get(key, e)) 
-                return false;
-            if (e.deleted) 
-                return false;
-            value = e.value;
-            return true;
-        }
+    bool get(const std::string& key, std::string& value);
+    void flush();                     
 
-        void flushToDisk(const std::string& path) 
-        {  
-            SSTable sstable;
-            sstable.write(path, memtable.getAll());
-            memtable.clear();
-        }
+    int tableCount();
+    int bloomSkips;                  
+    int diskReads;                 
 
-    private:
-        MemTable memtable;
+private:
+
+    std::string name;
+    int limit;
+    MemTable memtable;
+    FlushManager flusher;
+    
+    std::vector<TableInfo> tables;  
+    void loadExistingFiles();
 };
 
 #endif
