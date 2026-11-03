@@ -1,11 +1,12 @@
 #include "database_engine.h"
-void Database::loadExistingFiles() 
+void DatabaseEngine::loadExistingFiles() 
 {
     int id = 1;
     while (true) 
     {
         std::string path = FlushManager::pathFor(name, id);
-        std::vector<Entry> entries = SSTable::readAll(path);
+        SSTable sstable;
+        std::vector<Entry> entries = sstable.readAll(path);
         
         if (entries.empty())
             break;  
