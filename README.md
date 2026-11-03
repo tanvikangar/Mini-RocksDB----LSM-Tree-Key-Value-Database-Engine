@@ -27,13 +27,15 @@ Normal data structures like hash maps and binary trees are fast only while all t
 
 ## Modules
 
-| Module | Files | What it does |
-|---|---|---|
-| Shared type | `common.h` | `Entry` struct (key, value, deleted flag) |
-| MemTable | `memtable.h`, `memtable.cpp` | Skip List in RAM with put, get, remove |
-| Bloom Filter | `bloom_filter.h`, `bloom_filter.cpp` | Checks whether a key might exist |
-| SSTable | `sstable.h`, `sstable.cpp` | Writes and reads sorted data files |
-| Core Engine | `database_engine.h`, `main.cpp` | Connects the modules |
+| Module | Folder | Files | What it does |
+|---|---|---|---|
+| Shared type | `Shared type` | `common.h` | `Entry` struct: key, value, deleted flag |
+| MemTable | `MemTable` | `memtable.h`, `memtable.cpp` | Skip List in RAM with put, get, remove |
+| Bloom Filter | `Bloom Filter` | `bloom_filter.h`, `bloom_filter.cpp` | Says a key is "definitely absent" or "might be present" |
+| SSTable | `SSTable` | `sstable.h`, `sstable.cpp` | Writes and reads sorted data files |
+| Flush Manager | `FlushManager` | `flush_manager.h`, `flush_manager.cpp` | Min-Heap of flush jobs (Phase 3) |
+| Core Engine | `Core Engine` | `database_engine.h`, `database_engine.cpp`, `engine_read.cpp`, `engine_load.cpp`, `cli.cpp` | Connects all modules, command-line shell |
+| Tests | `Test files` | `test_*.cpp` | One test program per module |
 
 ## Team
 
