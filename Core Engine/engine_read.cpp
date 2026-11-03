@@ -23,5 +23,3 @@ bool DatabaseEngine::get(const std::string& key, std::string& value) {
     }
     return false;
 }
-    return false;
-}
