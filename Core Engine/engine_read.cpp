@@ -10,12 +10,13 @@ bool DatabaseEngine::get(const std::string& key, std::string& value) {
     }
 
     for (int i = (int)tables.size() - 1; i >= 0; i--) {
-        if (!tables[i].bloom.mightContain(key)) {
+        if (!tables[i].bloom.mightcontain(key)) {
             bloomSkips++;
             continue;
         }
         diskReads++;
-        if (SSTable::get(tables[i].path, key, e)) {
+        SSTable sstable;
+        if (sstable.get(tables[i].path, key, e)) {
             if (e.deleted) return false;
             value = e.value;
             return true;
