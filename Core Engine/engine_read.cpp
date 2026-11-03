@@ -10,7 +10,7 @@ bool DatabaseEngine::get(const std::string& key, std::string& value) {
     }
 
     for (int i = (int)tables.size() - 1; i >= 0; i--) {
-        if (!tables[i].bloom.mightContain(key)) {
+        if (!tables[i].bloom.mightcontain(key)) {
             bloomSkips++;
             continue;
         }
