@@ -6,7 +6,6 @@
 
 using namespace std;
 
-// Delete old files from a previous run
 void cleanUp(const string& name)
 {
     int id = 1;
@@ -42,7 +41,7 @@ int main()
     cout << "SSTable files created: "
          << db.tableCount() << "\n";
 
-    // Read some keys that exist and some that do not
+  
 
     string v;
     int found = 0, notFound = 0;
