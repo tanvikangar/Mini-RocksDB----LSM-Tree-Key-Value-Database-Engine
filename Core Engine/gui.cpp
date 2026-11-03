@@ -125,7 +125,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int nCmdShow)
     wc.hInstance = hInstance;
     wc.lpszClassName = "MiniRocksGui";
     wc.hbrBackground = (HBRUSH)(COLOR_WINDOW + 1);
-    wc.hCursor = LoadCursorA(NULL, IDC_ARROW);
+    wc.hCursor = LoadCursorA(NULL, MAKEINTRESOURCEA(32512));
     RegisterClassA(&wc);
 
     HWND window = CreateWindowA("MiniRocksGui", "Mini RocksDB",
