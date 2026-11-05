@@ -19,7 +19,6 @@ int main()
     DatabaseEngine db("mydb", 1000);
     std::cout << "=== Mini RocksDB ===\n";
     showHelp();
-
     std::string line;
     while (true) 
     {
@@ -28,7 +27,6 @@ int main()
         {
             break;
         }
-
         std::istringstream input(line);
         std::string command, key, value;
         input >> command >> key;
@@ -37,7 +35,6 @@ int main()
         {
             value = value.substr(1);
         }
-
         if (command == "put") 
         {
             if (key.empty() || value.empty()) 
