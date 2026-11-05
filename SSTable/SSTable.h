@@ -3,12 +3,7 @@
 
 #include <string>
 #include <vector>
-struct Entry
-{
-    std::string key;
-    std::string value;
-    bool deleted = false;
-};
+#include "common.h"
 
 class SSTable
 {

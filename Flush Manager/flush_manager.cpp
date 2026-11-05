@@ -40,7 +40,8 @@ std::vector<TableInfo> FlushManager::processAll()
         TableInfo info;
         info.path = pathFor(name, task.id);
 
-        SSTable::write(info.path, task.entries);          
+        SSTable sstable;
+        sstable.write(info.path, task.entries);
 
         for (size_t i = 0; i < task.entries.size(); i++)
         {
