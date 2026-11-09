@@ -103,7 +103,6 @@ minirocks> get banana
 
 | Phase | Status |
 |---|---|
-
 | Phase 1: Proposal and design | Done |
 | Phase 2: Individual modules (MemTable, Bloom Filter, SSTable, basic engine, command-line shell) | Done |
 | Phase 3: Min-Heap flush manager, automatic flush, Bloom Filter in the read path, reading across several files, speed measurement | In progress |
